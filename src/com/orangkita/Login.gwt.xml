@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 1.6.2//EN"
+        "http://google-web-toolkit.googlecode.com/svn/tags/1.6.2/distro-source/core/src/gwt-module.dtd">
+
+<module rename-to='orangkita'>
+    <inherits name='com.google.gwt.user.User'/>
+    
+    <!-- GXT theme inherits -->
+    <!-- <inherits name='com.google.gwt.user.theme.standard.Standard'/> -->
+    <inherits name="com.sencha.gxt.theme.triton.Theme" />
+    
+    <!-- GXT style sheet -->
+	<stylesheet src="reset.css" />
+	
+	<!-- GXT module inherits -->
+	<inherits name='com.sencha.gxt.ui.GXT' />
+	<inherits name='com.sencha.gxt.chart.Chart' />
+	
+	<!-- Other module inherits -->
+	<replace-with class="com.sencha.gxt.core.client.dom.Mask.MaskDefaultAppearance">
+    	<when-type-is class="com.sencha.gxt.core.client.dom.Mask.MaskAppearance" />
+  	</replace-with>
+	 
+	<!-- Specify the paths for translatable code -->
+  	<source path="client" />
+  	<source path="shared" />
+  	<source path="domain" />
+  	
+  	<!-- GZip / Compress the output files by default -->
+  	<inherits name='com.google.gwt.precompress.Precompress' />
+  	
+  	<!-- For development (support Mozilla only)-->
+	<set-property name="gxt.user.agent" value="gecko1_9" /> 
+	
+    <entry-point class='com.orangkita.client.Login'/>
+</module>
